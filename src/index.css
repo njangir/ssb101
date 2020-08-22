@@ -1,13 +1,116 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    background-image: url("./assets/site-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  color: #282735;
+}
+#root {
+  overflow: hidden;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.4);
+  width: 50%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+  body {
+    background-image: url("./assets/mobile-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.cornerItem:hover {
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.button {
+  background-color: #fa5454;
+  width: 340px;
+  height: 90px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  vertical-align: center;
+  border-radius: 10px;
+}
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 5px 10px #fa545498;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+#navBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  padding: 10px 0;
+}
+.navItem {
+  flex: 1;
+  font-size: 1.2em;
+  text-align: center;
+}
+.navItem:hover {
+  cursor: pointer;
+}
+.active {
+  font-weight: bold;
+}
+#page {
+  flex-shrink: 0;
+  min-height: 250px;
+}
+
+#reviewBox {
+  width: 460px;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+}
+#message {
+  display: block;
+  text-align: center;
+  margin: 10px;
+  height: 150px;
+  font-size: 1.2em;
+}
+#profile > p {
+  font-size: 0.7em;
 }
