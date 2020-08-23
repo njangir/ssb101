@@ -1,35 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import Video from "./Video";
 
-function Course(props) {
+function Course() {
   const thisDiv = useRef(null);
   const [size, setSize] = useState({ width: 560, height: 315 });
 
   useEffect(() => {
-    function handleResize(width) {
-      setSize({ width, height: window.innerHeight });
-      console.log(size);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize(thisDiv.current.offsetWidth);
-
-    return function () {
-      window.removeEventListener("resize", handleResize);
-    };
+    setSize({
+      width: thisDiv.current.offsetWidth,
+      height: thisDiv.current.offsetHeight,
+    });
+    console.log(thisDiv.current.offsetWidth);
   }, []);
 
   return (
-    <div
-      ref={thisDiv}
-      style={{
-        position: "absolute",
-        width: "100%",
-        zIndex: 1,
-        top: 0,
-      }}
-    >
+    <div ref={thisDiv} id="video">
       <Video size={size} />
     </div>
   );

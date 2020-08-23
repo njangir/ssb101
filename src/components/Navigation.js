@@ -45,17 +45,19 @@ function Navigation(props) {
             </Link>
           ))}
         </div>
-        <Switch>
-          <Route exact path="/">
-            <ReviewBox />
-          </Route>
-          <Route path="/About">
-            <About />
-          </Route>
-          <Route path="/Contact">
-            <ReviewBox />
-          </Route>
-        </Switch>
+        <div id="page">
+          <Switch>
+            <Route exact path="/">
+              <ReviewBox />
+            </Route>
+            <Route path="/About">
+              <About />
+            </Route>
+            <Route path="/Contact">
+              <ReviewBox />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );
